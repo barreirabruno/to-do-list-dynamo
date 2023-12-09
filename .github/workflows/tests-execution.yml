@@ -24,7 +24,10 @@ jobs:
         node-version: ${{ matrix.node }}
 
     - name: Set AWS Region
-      run: echo "AWS_REGION=us-east-1" >> $GITHUB_ENV
+      run: |
+        echo "AWS_ACCESS_KEY_ID=fake-access-key" >> $GITHUB_ENV
+        echo "AWS_SECRET_ACCESS_KEY=fake-secret-key" >> $GITHUB_ENV
+        echo "AWS_REGION=us-east-1" >> $GITHUB_ENV
 
     - name: Setup DynamoDB Local
       uses: rrainn/dynamodb-action@v2.0.1

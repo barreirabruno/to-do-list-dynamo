@@ -4,6 +4,11 @@ This application is a to-do-list using DynamoDB.
 The aim is running tests with github actions - unit and integration tests
 **No presentation layer was decided yet(Lambda, Web Server, etc)**
 
+## Links uteis para estudo
+
+https://jestjs.io/docs/dynamodb
+https://github.com/shelfio/jest-dynamodb
+
 ## Stack
 
 - Node18

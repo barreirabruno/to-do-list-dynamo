@@ -22,9 +22,23 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node }}
+
+    - name: Setup DynamoDB Local
+      uses: rrainn/dynamodb-action@v2.0.1
+      with:
+        dbPath:  "undefined"
+        sharedDb: "undefined"
+        delayTransientStatuses: "undefined" 
+        optimizeDbBeforeStartup: "undefined"
+        port: 8000
+        cors: '*'
             
     - name: Install dependencies
       run: npm ci
   
     - name: Unit tests
       run: npm run test:ci:unit
+
+    - name: Integration tests
+      run: npm run test:integration
+      

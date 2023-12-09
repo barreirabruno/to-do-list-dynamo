@@ -38,29 +38,13 @@ jobs:
         optimizeDbBeforeStartup: # undefined by default
         port: 8000
         cors: '*'
-    
+
     - name: Install dependencies
       run: npm ci
 
-  unit-test:
-    needs: setup
-    strategy:
-      matrix:
-        node: [18.x]
-    runs-on: ubuntu-latest
-    steps: 
-    - name: Unit tests
+    - name: Run Unit tests
       run: npm run test:ci:unit
 
-  integration-test:
-    needs: 
-      - setup
-      - unit-test
-    strategy:
-      matrix:
-        node: [18.x]
-    runs-on: ubuntu-latest
-    steps: 
-    - name: Integration tests
+    - name: Run Integration tests
       run: npm run test:integration
       

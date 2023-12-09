@@ -8,13 +8,7 @@ on:
       - main
 
 jobs:
-  deploy-dev:
-    strategy:
-      matrix:
-        node: [18.x]
+  Explore-github-actions:
     runs-on: ubuntu-latest
     steps:
-    - name: First message
-     run: |
-      echo "HELLO PIPELINE"
-    
+      - run: echo "HELLO PIPELINE GO GO GO"

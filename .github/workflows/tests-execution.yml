@@ -1,0 +1,20 @@
+name: todo-list-dynamodb-app
+
+on:
+  push:
+    branches:
+      - hml    
+      - develop
+      - main
+
+jobs:
+  deploy-dev:
+    strategy:
+      matrix:
+        node: [18.x]
+    runs-on: ubuntu-latest
+    steps:
+    - name: First message
+     run: |
+      echo "HELLO PIPELINE"
+    

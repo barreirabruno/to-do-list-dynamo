@@ -23,12 +23,8 @@ jobs:
       with:
         node-version: ${{ matrix.node }}
 
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: "AKID"
-        aws-secret-access-key: "SECRET"
-        aws-region: us-east-1
+    - name: Set AWS Region
+      run: echo "AWS_REGION=us-east-1" >> $GITHUB_ENV
 
     - name: Setup DynamoDB Local
       uses: rrainn/dynamodb-action@v2.0.1
